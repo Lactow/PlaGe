@@ -38,4 +38,16 @@ class DefaultController extends Controller
         return $this->render('auth/authentication.html.twig');   
     }
     
+    /**
+     * Matches / all enterprises
+     * route /{enterprise}
+     * 
+     * @Route("/enterprise", name="Your enterprise")
+     */
+    public function enterpriseOverview(){
+        return $this->render('enterprise/index.html.twig', array(
+            'enterprise_name' => 'PlaGE Corporation'
+        ));
+    }
+    
 }

@@ -1,0 +1,33 @@
+{# base template for enterprise. Will contain a dashboard with all enterprise public projects #}
+
+{% extends 'index.html.twig' %}
+
+
+{% block content %}
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom Projet</th>
+                    <th>Deadline</th>
+                    <th>Avancement (%)</th>
+                    <th>Vue Avancement</th>
+                </tr>
+            </thead>
+            
+            
+            <tbody>
+                <tr>
+                    <td>PlaGe</td>
+                    <td>14/09/2507</td>
+                    <td>10%</td>
+                    <td>barre avancement</td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+    </div>
+{% endblock %}
+
+
