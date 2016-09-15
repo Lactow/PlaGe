@@ -21,14 +21,35 @@ use Symfony\Component\HttpFoundation\Request;
 class EnterpriseController extends Controller {
 
     /**
-     * Matches / all enterprises
-     * route /{enterprise}
      * 
-     * @Route("/enterprise", name="Your enterprise")
+     * @Route("/enterprise", name="PlaGe")
      */
-    public function enterpriseOverview() {
+    public function enterpriseView(){
+       // $breadcrumbs = $this->get("white_october_breadcrumbs");
+    // Simple example
+    //$breadcrumbs->addItem("Home", $this->get("router")->generate("/enterprise"));
+
+    // Example without URL
+    //$breadcrumbs->addItem("Some text without link");
+    
+      return $this->render('enterprise/enterprise.html.twig',
+              array(
+                  'enterprise_name' => 'PlaGE Corporation'
+                 
+                  
+              ));  
+    }
+    
+    /**
+     * Matches / all enterprises
+     * route /{enterprise}/dashboard
+     * 
+     * @Route("/enterprise/dashboard", name="Dashboard PlaGe")
+     */
+    public function enterpriseDashboard() {
+        //This return is a fake enterprise
         return $this->render('enterprise/dashboard.html.twig', array(
-                    'enterprise_name' => 'PlaGE Corporation',
+                    
                     'project_name' => 'PlaGe',
                     'project_dead_line' => '14/02/2110',
                     'project_progress' => '10%',

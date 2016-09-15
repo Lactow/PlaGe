@@ -75,3 +75,15 @@ assetic:
     use_controller: '%kernel.debug%'
     filters:
         cssrewrite: ~
+        
+# Breadcrumbs bundle
+white_october_breadcrumbs:
+    separator:          '/'
+    separatorClass:     'separator'
+    listId:             'wo-breadcrumbs'
+    listClass:          'breadcrumb'
+    itemClass:          ''
+    linkRel:            ''
+    locale:             ~ # defaults to null, so the default locale is used
+    translation_domain: ~ # defaults to null, so the default domain is used
+    viewTemplate:       'WhiteOctoberBreadcrumbsBundle::breadcrumbs.html.twig'

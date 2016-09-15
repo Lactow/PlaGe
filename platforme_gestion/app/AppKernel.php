@@ -18,7 +18,8 @@ class AppKernel extends Kernel
             
             new AppBundle\AppBundle(),
             new AdminPlaGeBundle\AdminPlaGeBundle(),
-            new Symfony\Bundle\AsseticBundle\AsseticBundle()
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            new WhiteOctober\BreadcrumbsBundle\WhiteOctoberBreadcrumbsBundle()
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
