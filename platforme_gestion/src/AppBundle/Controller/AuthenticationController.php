@@ -55,13 +55,13 @@ class AuthenticationController extends Controller
         if($request->isMethod('POST')){
             switch ($request->get('email')) {
                 case 'client':
-                    return $this->redirect($this->generateUrl('Dashboard PlaGe'));
+                    return $this->redirect($this->generateUrl('Client view'));
                     break;
                 case 'admin':
-                    return $this->redirect($this->generateUrl('Dashboard PlaGe'));
+                    return $this->redirect($this->generateUrl('Admin view'));
                     break;
                 case 'utilisateur':
-                    return $this->redirect($this->generateUrl('Dashboard PlaGe'));
+                    return $this->redirect($this->generateUrl('User view'));
                     break;
                 default:
                     //Page access denied
