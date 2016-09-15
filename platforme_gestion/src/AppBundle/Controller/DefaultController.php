@@ -38,6 +38,13 @@ class DefaultController extends Controller
         return $this->render('auth/authentication.html.twig');   
     }
     
+    /**
+     * 
+     * @Route("/create", name="register your enterprise")
+     */
+    public function viewCreateEnterprise(){
+        return $this->render('auth/createEnterprise.html.twig');
+    }
     
     
 }

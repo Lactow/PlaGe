@@ -3,15 +3,17 @@
 {% extends 'enterprise/enterprise_index.html.twig' %}
 
 
-{% block content %}
+{% block contentt %}
+    
+    {% block titlee %}{{enterprise_name}}{% endblock %}
     <div>
         <table class='table table-striped'>
             <thead>
                 <tr>
-                    <th>Project Namest</th>
+                    <th>Project Names</th>
                     <th>Deadline</th>
                     <th>Progress (%)</th>
-                    <th>Progress Bar</th>
+                    <th>Progress bar</th>
                 </tr>
             </thead>
 

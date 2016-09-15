@@ -2,18 +2,16 @@
 
 {% extends 'base.html.twig' %}
 
-{% block body %}
+{% block content %}
     <div id="wrapper">
         <div id="container">
             <div id="welcome">
-                <h1>{{enterprise_name}} Dashboard</h1>
+                <h1>{% block titlee %}{{enterprise_name}} {% endblock %} Dashboard</h1>
             </div>
             {% block nav %}{% endblock %}
             
             <div class="content">
-            {% block content %}
-
-            {% endblock %}
+            {% block contentt %}{% endblock %}
             </div>
            
         </div>

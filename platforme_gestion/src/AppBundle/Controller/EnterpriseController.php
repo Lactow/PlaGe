@@ -49,7 +49,7 @@ class EnterpriseController extends Controller {
     public function enterpriseDashboard() {
         //This return is a fake enterprise
         return $this->render('enterprise/dashboard.html.twig', array(
-                    
+                    'enterprise_name'=>'PlaGe Corporation',
                     'project_name' => 'PlaGe',
                     'project_dead_line' => '14/02/2110',
                     'project_progress' => '10%',
