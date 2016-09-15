@@ -1,4 +1,5 @@
 <?php
+
 /*
  * This controller is the main controller
  * It will init routes for : 
@@ -17,30 +18,38 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-class EnterpriseController extends Controller
-{
+class EnterpriseController extends Controller {
+
     /**
      * Matches / all enterprises
      * route /{enterprise}
      * 
      * @Route("/enterprise", name="Your enterprise")
      */
-    public function enterpriseOverview(){
-        return $this->render('enterprise/enterprise_index.html.twig', array(
-            'enterprise_name' => 'PlaGE Corporation',
-            'project_name'=> 'PlaGe',
-            'dead_line'=> '14/02/2110',
-            'progress'=>'10%',
-            'progress_bar'=>'][-|*|------------------]>'
-        ));
-    }
-    
-    /**
-     * @Route("/enterprise/dashboard", name="dashboard")
-     */
-    public function indexAction(){
+    public function enterpriseOverview() {
         return $this->render('enterprise/dashboard.html.twig', array(
-           'var'=>'blah'
+                    'enterprise_name' => 'PlaGE Corporation',
+                    'project_name' => 'PlaGe',
+                    'project_dead_line' => '14/02/2110',
+                    'project_progress' => '10%',
+                    'project_progress_bar' => '][-|*|------------------]>',
+                    'items' => array(
+                        'wiki' => array(
+                            'name' => 'Wiki Enterprise',
+                            'link' => 'http://www.wikipedia.org/wiki'
+                        ),
+                        'official_doc' => array(
+                            'name' => 'Enterprise Official Document',
+                            'link' => 'http://www.github.com'
+                        )
+                    ),
+                    'admins' => array(
+                        'Blah' => array(
+                            'name' => 'Blah Bleh',
+                            'mail' => 'admin-blah@pla_ge.com'
+                        )
+                    )
         ));
     }
+
 }

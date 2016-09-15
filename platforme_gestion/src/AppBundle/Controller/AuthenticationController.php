@@ -18,6 +18,7 @@ use Symfony\Component\HttpFoundation\Request;
 class AuthenticationController extends Controller
 {
     /**
+     * will create ONE ENTERPRISE
      * @Route("/auth/create", name="submit")
      */
     public function submitEnterprise(){
@@ -25,7 +26,8 @@ class AuthenticationController extends Controller
     }
     
     /**
-     * @Route("/{enterprise}/{usr}", name="login")
+     * will log any user (admin, user, client) FOR ONE ENTERPRISE
+     * @Route("/enterprise/auth", name="login")
      */
     public function login($enterprise, $usr){
         //will connect the user/admin/client 
@@ -33,7 +35,8 @@ class AuthenticationController extends Controller
     }
     
     /**
-     * @Route("/{enterprise}/logout", name="logout")
+     * will logout any user (admin, user, client) FOR ONE ENTERPRISE
+     * @Route("/enterprise/logout", name="logout")
      */
     public function logout($enterprise){
         //disconnect user/admin/client

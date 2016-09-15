@@ -1,10 +1,46 @@
 {# base template for enterprise. Will contain a dashboard with all enterprise public projects #}
 {# www.mysite.fr/{entreprise} #}
-{% extends 'enterprise_index.html.twig' %}
+{% extends 'enterprise/enterprise_index.html.twig' %}
 
 
 {% block content %}
-    {{var}}
+    <div>
+        <table class='table table-striped'>
+            <thead>
+                <tr>
+                    <th>Project Namest</th>
+                    <th>Deadline</th>
+                    <th>Progress (%)</th>
+                    <th>Progress Bar</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+                {# for project in projects#}
+                <tr>
+                    <td>{{ project_name }}</td>
+                    <td>{{ project_dead_line }}</td>
+                    <td>{{ project_progress }}</td>
+                    <td>{{ project_progress_bar }}</td>
+                </tr>
+                {# endfor #}
+            </tbody>
+        </table>
+    </div>
+            <div><h4>Admins PlaGe</h4>
+        {% for admin in admins%}
+        <span>Nom admin : {{admin.name}}</span>
+        <span>Contact admin : {{admin.mail}}</span>
+         {% endfor %}
+    </div>
+    <div><h4>Documentation Links for PlaGe</h4>
+        <ul>
+            {% for item in items %}
+                <li><span><a href='{{item.link}}'>{{item.name}}</a></span></li>
+             {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
 
 

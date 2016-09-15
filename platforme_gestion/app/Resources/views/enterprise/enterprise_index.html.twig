@@ -12,31 +12,7 @@
             
             <div class="content">
             {% block content %}
-            <div>
-   
-        <table class='table table-striped'>
-            <thead>
-                <tr>
-                    <th>Nom Projet</th>
-                    <th>Deadline</th>
-                    <th>Avancement (%)</th>
-                    <th>Vue Avancement</th>
-                </tr>
-            </thead>
-            
-            
-            <tbody>
-                <tr>
-                    <td>{{ project_name }}</td>
-                    <td>{{ dead_line }}</td>
-                    <td>{{ progress }}</td>
-                    <td>{{ progress_bar }}</td>
-                </tr>
-                
-            </tbody>
-        </table>
-        
-    </div>
+
             {% endblock %}
             </div>
            
