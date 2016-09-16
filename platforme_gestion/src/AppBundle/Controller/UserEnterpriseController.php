@@ -78,7 +78,43 @@ class UserEnterpriseController extends Controller {
      */
     public function viewProjectTasks() {
 
-        return $this->render('enterprise/user/project_tasks.html.twig');
+        return $this->render('enterprise/user/project_tasks.html.twig', array(
+                'tasks' => array(
+                    '0' => array(
+                        'titre' => 'titre',
+                        'priority' => 'High',
+                        'category' => 'Bug',
+                        'status' => 'New',
+                        'progress' => '20%',
+                        'datemodif' => '20/05/2015'
+                        ),
+                    '1' => array(
+                        'titre' => 'titre',
+                        'priority' => 'Low',
+                        'category' => 'Dev',
+                        'status' => 'In Progress',
+                        'progress' => '60%',
+                        'datemodif' => '03/06/2004'
+                        ),
+                    '2' => array(
+                        'titre' => 'titre',
+                        'priority' => 'Med',
+                        'category' => 'Doc',
+                        'status' => 'Rejected',
+                        'progress' => '20%',
+                        'datemodif' => '02/08/2013'
+                        ),
+                    '3' => array(
+                        'titre' => 'titre',
+                        'priority' => 'Med',
+                        'category' => 'Dev',
+                        'status' => 'Valided',
+                        'progress' => '100%',
+                        'datemodif' => '02/05/2016'
+                        )
+                    )
+                )
+            );
     }
 
     /**

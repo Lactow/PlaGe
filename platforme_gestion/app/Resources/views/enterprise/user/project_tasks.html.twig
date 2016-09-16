@@ -1,5 +1,29 @@
 {# empty Twig template #}
 {% extends 'index.html.twig' %}
 {% block content %}
-tasks proj
+	<a href="#" class="btn btn-success">Ajouter une tâche</a>
+	<table class="table">
+	    <thead>
+	      <tr>
+	        <th>Titre de la tâche</th>
+	        <th>Priorité</th>
+	        <th>Catégorie</th>
+	        <th>Statut</th>
+	        <th>Avancement</th>
+	        <th>Date modification</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	    	{% for task in tasks %}
+		      <tr class="">
+		        <td>{{task.titre}}</td>
+		        <td>{{task.priority}}</td>
+		        <td>{{task.category}}</td>
+		        <td>{{task.status}}
+		        <td>{{task.progress}}</td>
+		        <td>{{task.datemodif}}</td>
+		      </tr>
+	  		{% endfor %}
+	    </tbody>
+	</table>
 {% endblock %}

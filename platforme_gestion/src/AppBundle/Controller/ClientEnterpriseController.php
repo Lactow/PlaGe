@@ -121,7 +121,8 @@ class ClientEnterpriseController extends Controller {
                     			'descriptif' => 'http://wikiwiki.fr/hello',
                     			'datecreate' => '05/05/2005'),
                     		)
-        ));
+                    )
+		);
 	}
 	/**
 	 *
