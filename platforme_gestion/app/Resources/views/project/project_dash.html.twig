@@ -4,19 +4,55 @@
 		
 
 	{% elseif type_connection == 'client' %}
+		<div class="row" id="top-project-infos ">
+			<div id="top-left" class="col-md-5 project_infos panel panel-default" >
+				<div class="panel-heading" id="project_infos">Description du projet</div>
+				<div class="panel-body">blablablablklfmdsklmdjkflmjfkqsmljkqlmdjsqkdmjqs</div>
+			</div>
+			<div id="top-right" class="col-md-5 project_infos panel panel-default" >
+				<div class="panel-heading " id="personn_project">Personne sur le projet</div>
+				<div class="panel-body">
+						<table>
 
-			<div id="top-left" style="background-color:green;">
+						</table>
+				</div>
+			</div>
+		</div>
+		<div class="row" id="down-project-infos ">
+			<div id="down-left" class="col-md-5 project_infos panel panel-default" >
+				<div class="panel-heading " id="link_doc">Liens documentations</div>
+				<div class="panel-body">
+					<table>
 
+					</table>
+				</div>
 			</div>
-			<div id="top-right" style="background-color:orange;">
-				
+			
+			<div id="down-right" class="col-md-5 project_infos panel panel-default" >
+				<div class="panel-heading" id="report_bug">BugReport</div>
+				<div class="panel-body">BIG BOUTON VERS BUGREPORT</div>
 			</div>
-			<div id="down-left" style="background-color:blue;">
-				
-			</div>
-			<div id="down-right" style="background-color:red;">
-				
-			</div>
-		
+			
+		</div>
 	{% endif %}
+{% endblock %}
+
+{% block stylesheets %}
+	<style>
+	#top-project-infos, #down-project-infos{
+		margin-top:30px;
+
+	}
+	#top-right,#top-left,#down-left, #down-right{
+		margin-left:5em;
+	}
+
+	.project_infos{
+		height:25em;
+	}
+	.panel{
+		padding:0 !important;
+		margin:;
+	}
+	</style>
 {% endblock %}
