@@ -2,5 +2,13 @@
 {% extends 'enterprise/enterprise_index.html.twig' %}
 
 {% block contentt %}
-	Page test enterprise/enterprise_index
+	{% if view_extension is defined %}
+		{% if view_extension == 'dash' %}
+			{% include 'enterprise/dashboard.html.twig' %}
+		<!--{% elseif %}-->
+		{% endif %}
+		
+	{% endif %}
+		
+
 {% endblock %}

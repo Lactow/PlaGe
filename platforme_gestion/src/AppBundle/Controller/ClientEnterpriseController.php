@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+
 class ClientEnterpriseController extends Controller {
 	/**
      * 
@@ -13,8 +14,10 @@ class ClientEnterpriseController extends Controller {
      */
 	function ClientView(){
 		return $this->render('enterprise/client/default_client.html.twig', array(
-                    'enterprise_name' => 'PlaGE Corporation'
+                    'enterprise_name' => 'PlaGE Corporation',
+                    'view_extension' => 'dash'
         ));
+        
 	}
 
 	/**
