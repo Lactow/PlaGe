@@ -36,6 +36,7 @@ class AdminEnterpriseController extends Controller {
     public function AdminView() {
 
         return $this->render('enterprise/administrator/default_admin.html.twig', array(
+                    'type_connection' => 'client',
                     'enterprise_name' => 'PlaGe Corporation',
                     'project_name' => 'PlaGe',
                     'project_dead_line' => '14/02/2110',
@@ -61,13 +62,12 @@ class AdminEnterpriseController extends Controller {
     }
 
     /**
-     * will take project id
-     * 
-     * @Route("/enterprise/admin/projectdash", name="Project View")
+     * @Route("/enterprise/admin/project", name="Dash view")
      */
     public function ProjectDashboard() {
         //This return one project selected 
-        return $this->render('dashboard.html.twig', array(
+        return $this->render('enterprise/administrator/default_admin.html.twig', array(
+                    'type_connection' => 'admin',
                     'enterprise_name' => 'PlaGe Corporation',
                     'project_name' => 'PlaGe',
                     'project_dead_line' => '14/02/2110',
@@ -103,8 +103,7 @@ class AdminEnterpriseController extends Controller {
 
     /**
      * wil take id project
-     * @Route("enterprise/admin/project/tasks", name="Tasks view")
-     * 
+     * @Route("/enterprise/admin/project/tasks", name="View All Tasks")
      */
     public function viewProjectTasks() {
 
@@ -118,10 +117,10 @@ class AdminEnterpriseController extends Controller {
     public function viewTask() {
         return $this->render('enterprise/administrator/project/task.html.twig');
     }
-    
+
     /**
      * will take id projetc, id task
-     * @Route("/enterprise/admin/project/task/edit", name="One task")
+     * @Route("/enterprise/admin/project/task/edit", name="Edit task")
      */
     public function editTask() {
         return $this->render('enterprise/administrator/project/task_form.html.twig');
@@ -143,39 +142,40 @@ class AdminEnterpriseController extends Controller {
     public function editUser() {
         return $this->render('enterprise/administrator/user_form.html.twig');
     }
-    
+
     /**
      * @Route("/enterprise/admin/user/roles", name="User Roles")
      */
-    public function viewRoles(){
+    public function viewRoles() {
         return $this->render('enterprise/administrator/roles.html.twig');
     }
-    
+
     /**
      * @Route("/enterprise/admin/user/role/edit", name="Edit Role")
      */
-    public function editRole(){
+    public function editRole() {
         return $this->render('enterprise/administrator/role_form.html.twig');
     }
 
     /**
      * @Route("/enterprise/admin/project/calendar", name="Project Calendar")
      */
-    public function viewCalendar(){
+    public function viewCalendar() {
         return $this->render('enterprise/administrator/calendar.html.twig');
     }
-    
+
     /**
      * @Route("/enterprise/admin/project/budget", name="Project Budget")
      */
-    public function viewBudget(){
+    public function viewBudget() {
         return $this->render('enterprise/administrator/budget.html.twig');
     }
-    
+
     /**
      * @Route("/enterprise/admin/project/budget-management", name="Budget Management")
      */
-    public function editBudget(){
+    public function editBudget() {
         return $this->render('enterprise/administrator/budget_management.html.twig');
     }
+
 }
