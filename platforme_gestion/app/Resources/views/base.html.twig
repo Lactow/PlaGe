@@ -3,17 +3,27 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
-        <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
-        <script src="{{ asset('js/jquery.min.js') }}"></script>
-        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    </head>
-    <body>
-        {% block header %}{% endblock %}
-        {% block content %}{% endblock %}
-        {% block footer %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+    <!--<link rel="stylesheet" href="{#{ asset('css/main.css') }#}" />-->
+
+</head>
+<body>
+    {% block header %}
+        {% include 'default/header.html.twig' %}
+    {% endblock %}
+{% block content %}{% endblock %}
+{% block footer %}
+        {% include 'default/footer.html.twig' %}
+{% endblock %}
+{% block javascripts %}
+   
+{% endblock %}
+<script
+    src="https://code.jquery.com/jquery-3.1.0.min.js"
+    integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+    crossorigin="anonymous"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+</body>
 </html>
