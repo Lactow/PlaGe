@@ -47,7 +47,7 @@ class ClientEnterpriseController extends Controller {
 	 *@Route("/enterprise/client/project", name="Client project")
 	 */
 	function ProjectDashboard(){
-		return $this->render('project/project_dash.html.twig', array(
+		return $this->render('enterprise/project/project_dash.html.twig', array(
                     'type_connection' => 'client',
                     'descriptif_projet' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris molestie, lorem in dapibus tincidunt, tellus turpis lobortis est, vel tristique arcu ipsum vitae tortor. Pellentesque laoreet congue felis, at vehicula massa volutpat sit amet. Aliquam erat volutpat. Nulla eu tristique velit. Vestibulum feugiat in eros a pulvinar. Donec nibh dolor, ullamcorper at turpis vitae, aliquet ultrices tellus. Sed hendrerit et dui a luctus. Ut felis sapien, interdum eu sollicitudin at, feugiat id eros. Praesent in dolor ante. Aliquam sodales imperdiet porttitor.',
                     'personns' => array(
@@ -147,7 +147,7 @@ class ClientEnterpriseController extends Controller {
 	 *@Route("/enterprise/client/project/contact", name="contact client")
 	 */
 	function contactView(){
-		return $this->render('general/contact.html.twig', array(
+		return $this->render('enterprise//contact.html.twig', array(
                     'enterprise_name' => 'PlaGE Corporation'
         ));
 	}

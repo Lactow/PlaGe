@@ -1,0 +1,281 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    {% if type_connection == 'user' %}
+        <div class="row" id="top-project-infos ">
+            <div id="top-left" class="col-md-5 project_infos panel panel-default" >
+                <div class="panel-heading" id="project_infos">Description du projet</div>
+                <div class="panel-body">
+                    {{descriptif_projet}}
+                </div>
+            </div>
+            <div id="top-right" class="col-md-5 project_infos panel panel-default" >
+                <div class="panel-heading " id="personn_project">Personnes sur le projet</div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Titre du document</th>
+                                <th>Lien de consultation</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for personn in personns %}
+                                <tr class="danger">
+                                    <td>{{personn.nom}}</td>
+                                    <td>{{personn.prenom}}</td>
+                                    <td>{{personn.post}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="down-project-infos ">
+            <div id="down-left" class="col-md-5 project_infos panel panel-default" >
+                <div class="panel-heading " id="link_doc">Liens documentations</div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Titre du document</th>
+                                <th>Lien de consultation</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for doc in docs %}
+                                <tr class="info">
+                                    <td>{{doc.title}}</td>
+                                    <td>{{doc.descriptif}}</td>
+                                    <td>{{doc.datecreate}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="down-right" class="col-md-5 project_infos panel panel-default" >
+                <div class="panel-heading" id="report_bug">BugReport</div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Titre du bug</th>
+                                <th>Descriptif</th>
+                                <th>Date</th>
+                                <th>Progression</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for bug in bugs %}
+                                <tr class="success">
+                                    <td>{{bug.title}}</td>
+                                    <td>{{bug.descriptif}}</td>
+                                    <td>{{bug.datecreate}}</td>
+                                    <td>{{bug.progress}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <center><a href="#" class="btn btn-success">Ajouter un bug</a></center>
+                </div>
+            </div>
+
+        </div>
+
+    {% elseif type_connection == 'admin' %}
+        <div class="row" id="top-project-infos ">
+            <div id="top-left" class="col-md-5 project_infos panel panel-default" >
+                <div class="panel-heading" id="project_infos">Description du projet</div>
+                <div class="panel-body">
+                    {{descriptif_projet}}
+                </div>
+            </div>
+            <div id="top-right" class="col-md-5 project_infos panel panel-default" >
+                <div class="panel-heading " id="personn_project">Personnes sur le projet</div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Titre du document</th>
+                                <th>Lien de consultation</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for personn in personns %}
+                                <tr class="danger">
+                                    <td>{{personn.nom}}</td>
+                                    <td>{{personn.prenom}}</td>
+                                    <td>{{personn.post}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="down-project-infos ">
+            <div id="down-left" class="col-md-5 project_infos panel panel-default" >
+                <div class="panel-heading " id="link_doc">Liens documentations</div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Titre du document</th>
+                                <th>Lien de consultation</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for doc in docs %}
+                                <tr class="info">
+                                    <td>{{doc.title}}</td>
+                                    <td>{{doc.descriptif}}</td>
+                                    <td>{{doc.datecreate}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="down-right" class="col-md-5 project_infos panel panel-default" >
+                <div class="panel-heading" id="report_bug">BugReport</div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Titre du bug</th>
+                                <th>Descriptif</th>
+                                <th>Date</th>
+                                <th>Progression</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for bug in bugs %}
+                                <tr class="success">
+                                    <td>{{bug.title}}</td>
+                                    <td>{{bug.descriptif}}</td>
+                                    <td>{{bug.datecreate}}</td>
+                                    <td>{{bug.progress}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <center><a href="#" class="btn btn-success">Ajouter un bug</a></center>
+                </div>
+            </div>
+
+        </div>
+
+    {% elseif type_connection == 'client' %}
+        <div class="row" id="top-project-infos ">
+            <div id="top-left" class="col-md-5 project_infos panel panel-default" >
+                <div class="panel-heading" id="project_infos">Description du projet</div>
+                <div class="panel-body">
+                    {{descriptif_projet}}
+                </div>
+            </div>
+            <div id="top-right" class="col-md-5 project_infos panel panel-default" >
+                <div class="panel-heading " id="personn_project">Personnes sur le projet</div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Titre du document</th>
+                                <th>Lien de consultation</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for personn in personns %}
+                                <tr class="danger">
+                                    <td>{{personn.nom}}</td>
+                                    <td>{{personn.prenom}}</td>
+                                    <td>{{personn.post}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="down-project-infos ">
+            <div id="down-left" class="col-md-5 project_infos panel panel-default" >
+                <div class="panel-heading " id="link_doc">Liens documentations</div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Titre du document</th>
+                                <th>Lien de consultation</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for doc in docs %}
+                                <tr class="info">
+                                    <td>{{doc.title}}</td>
+                                    <td>{{doc.descriptif}}</td>
+                                    <td>{{doc.datecreate}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="down-right" class="col-md-5 project_infos panel panel-default" >
+                <div class="panel-heading" id="report_bug">BugReport</div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Titre du bug</th>
+                                <th>Descriptif</th>
+                                <th>Date</th>
+                                <th>Progression</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for bug in bugs %}
+                                <tr class="success">
+                                    <td>{{bug.title}}</td>
+                                    <td>{{bug.descriptif}}</td>
+                                    <td>{{bug.datecreate}}</td>
+                                    <td>{{bug.progress}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <center><a href="#" class="btn btn-success">Ajouter un bug</a></center>
+                </div>
+            </div>
+
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        #top-project-infos, #down-project-infos{
+            margin-top:30px;
+
+        }
+        #top-right,#top-left,#down-left, #down-right{
+            margin-left:5em;
+        }
+
+        .project_infos{
+            height:25em;
+        }
+        .panel{
+            padding:0 !important;
+            margin:0;
+        }
+    </style>
+{% endblock %}

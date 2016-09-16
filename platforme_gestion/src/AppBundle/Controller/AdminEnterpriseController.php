@@ -98,7 +98,7 @@ class AdminEnterpriseController extends Controller {
      */
     public function createProject() {
 
-        return $this->render('enterprise/administrator/project_create.html.twig');
+        return $this->render('enterprise/project/project_create.html.twig');
     }
 
     /**
@@ -107,7 +107,7 @@ class AdminEnterpriseController extends Controller {
      */
     public function viewProjectTasks() {
 
-        return $this->render('enterprise/administrator/project_tasks.html.twig');
+        return $this->render('enterprise/task/project_tasks.html.twig');
     }
 
     /**
@@ -115,7 +115,7 @@ class AdminEnterpriseController extends Controller {
      * @Route("/enterprise/admin/project/task", name="One task")
      */
     public function viewTask() {
-        return $this->render('enterprise/administrator/task.html.twig');
+        return $this->render('enterprise/task/task.html.twig');
     }
 
     /**
@@ -123,7 +123,7 @@ class AdminEnterpriseController extends Controller {
      * @Route("/enterprise/admin/project/task/edit", name="Edit task")
      */
     public function editTask() {
-        return $this->render('enterprise/administrator/task_form.html.twig');
+        return $this->render('enterprise/task/task_form.html.twig');
     }
 
     /**
@@ -132,7 +132,7 @@ class AdminEnterpriseController extends Controller {
      * @Route("/enterprise/admin/users")
      */
     public function viewUsers() {
-        return $this->render('enterprise/administrator/users.html.twig');
+        return $this->render('enterprise/administrator/user_manager/users.html.twig');
     }
 
     /**
@@ -140,42 +140,42 @@ class AdminEnterpriseController extends Controller {
      * @Route("/enterprise/admin/user/edit", name="Edit User")
      */
     public function editUser() {
-        return $this->render('enterprise/administrator/user_form.html.twig');
+        return $this->render('enterprise/administrator/user_manager/user_form.html.twig');
     }
 
     /**
      * @Route("/enterprise/admin/user/roles", name="User Roles")
      */
     public function viewRoles() {
-        return $this->render('enterprise/administrator/roles.html.twig');
+        return $this->render('enterprise/administrator/user_manager/roles.html.twig');
     }
 
     /**
      * @Route("/enterprise/admin/user/role/edit", name="Edit Role")
      */
     public function editRole() {
-        return $this->render('enterprise/administrator/role_form.html.twig');
+        return $this->render('enterprise/administrator/user_manager/role_form.html.twig');
     }
 
     /**
      * @Route("/enterprise/admin/project/calendar", name="Project Calendar")
      */
     public function viewCalendar() {
-        return $this->render('enterprise/administrator/calendar.html.twig');
+        return $this->render('enterprise/task/calendar/calendar.html.twig');
     }
 
     /**
      * @Route("/enterprise/admin/project/budget", name="Project Budget")
      */
     public function viewBudget() {
-        return $this->render('enterprise/administrator/budget.html.twig');
+        return $this->render('enterprise/administrator/budget/budget.html.twig');
     }
 
     /**
      * @Route("/enterprise/admin/project/budget-management", name="Budget Management")
      */
     public function editBudget() {
-        return $this->render('enterprise/administrator/budget_management.html.twig');
+        return $this->render('enterprise/administrator/budget/budget_management.html.twig');
     }
 
 }

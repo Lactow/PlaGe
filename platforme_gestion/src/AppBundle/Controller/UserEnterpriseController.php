@@ -66,7 +66,7 @@ class UserEnterpriseController extends Controller {
      */
     public function ProjectDashboard() {
         //This return one project selected 
-        return $this->render('project/project_dash.html.twig', array(
+        return $this->render('enterprise/project/project_dash.html.twig', array(
                 'type_connection' => 'user'
             ));
     }
@@ -78,7 +78,7 @@ class UserEnterpriseController extends Controller {
      */
     public function viewProjectTasks() {
 
-        return $this->render('enterprise/user/project_tasks.html.twig', array(
+        return $this->render('enterprise/task/project_tasks.html.twig', array(
                 'tasks' => array(
                     '0' => array(
                         'titre' => 'titre',
@@ -122,21 +122,21 @@ class UserEnterpriseController extends Controller {
      * 
      */
     public function viewOneTask(){
-        return $this->render("enterprise/user/task.html.twig");
+        return $this->render("enterprise/task/task.html.twig");
     }
     /**
      * will take id projetc, id task
      * @Route("/enterprise/user/project/task/edit", name="One task")
      */
     public function editTask() {
-        return $this->render('enterprise/user/task_form.html.twig');
+        return $this->render('enterprise/task/task_form.html.twig');
     }
 
     /**
      * @Route("/enterprise/user/project/calendar", name="Project Calendar")
      */
     public function viewCalendar(){
-        return $this->render('enterprise/user/calendar.html.twig');
+        return $this->render('enterprise/task/calendar/calendar.html.twig');
     }
 
 }
