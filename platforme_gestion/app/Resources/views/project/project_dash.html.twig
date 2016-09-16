@@ -7,14 +7,31 @@
 		<div class="row" id="top-project-infos ">
 			<div id="top-left" class="col-md-5 project_infos panel panel-default" >
 				<div class="panel-heading" id="project_infos">Description du projet</div>
-				<div class="panel-body">blablablablklfmdsklmdjkflmjfkqsmljkqlmdjsqkdmjqs</div>
+				<div class="panel-body">
+					{{descriptif_projet}}
+				</div>
 			</div>
 			<div id="top-right" class="col-md-5 project_infos panel panel-default" >
-				<div class="panel-heading " id="personn_project">Personne sur le projet</div>
+				<div class="panel-heading " id="personn_project">Personnes sur le projet</div>
 				<div class="panel-body">
-						<table>
-
-						</table>
+						<table class="table">
+					    <thead>
+					      <tr>
+					        <th>Titre du document</th>
+					        <th>Lien de consultation</th>
+					        <th>Date</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+					    	{% for personn in personns %}
+						      <tr class="danger">
+						        <td>{{personn.nom}}</td>
+						        <td>{{personn.prenom}}</td>
+						        <td>{{personn.post}}</td>
+						      </tr>
+					  		{% endfor %}
+					    </tbody>
+					  </table>
 				</div>
 			</div>
 		</div>
@@ -22,15 +39,51 @@
 			<div id="down-left" class="col-md-5 project_infos panel panel-default" >
 				<div class="panel-heading " id="link_doc">Liens documentations</div>
 				<div class="panel-body">
-					<table>
-
-					</table>
+					<table class="table">
+					    <thead>
+					      <tr>
+					        <th>Titre du document</th>
+					        <th>Lien de consultation</th>
+					        <th>Date</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+					    	{% for doc in docs %}
+						      <tr class="info">
+						        <td>{{doc.title}}</td>
+						        <td>{{doc.descriptif}}</td>
+						        <td>{{doc.datecreate}}</td>
+						      </tr>
+					  		{% endfor %}
+					    </tbody>
+					  </table>
 				</div>
 			</div>
 			
 			<div id="down-right" class="col-md-5 project_infos panel panel-default" >
 				<div class="panel-heading" id="report_bug">BugReport</div>
-				<div class="panel-body">BIG BOUTON VERS BUGREPORT</div>
+				<div class="panel-body">
+					<table class="table">
+					    <thead>
+					      <tr>
+					        <th>Titre du bug</th>
+					        <th>Descriptif</th>
+					        <th>Date</th>
+					        <th>Progression</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+					    	{% for bug in bugs %}
+						      <tr class="success">
+						        <td>{{bug.title}}</td>
+						        <td>{{bug.descriptif}}</td>
+						        <td>{{bug.datecreate}}</td>
+						        <td>{{bug.progress}}</td>
+						      </tr>
+					  		{% endfor %}
+					    </tbody>
+					  </table>
+				</div>
 			</div>
 			
 		</div>
