@@ -36,6 +36,7 @@ class UserEnterpriseController extends Controller {
                     'view_extension' => 'dash',
                     'enterprise_name'=>'PlaGe Corporation',
                     'project_name' => 'PlaGe',
+                    'type_connection' => 'user',
                     'project_dead_line' => '14/02/2110',
                     'project_progress' => '10%',
                     'project_progress_bar' => '][-|*|------------------]>',
@@ -65,7 +66,9 @@ class UserEnterpriseController extends Controller {
      */
     public function ProjectDashboard() {
         //This return one project selected 
-        return $this->render('enterprise/user/project_dash.html.twig');
+        return $this->render('project/project_dash.html.twig', array(
+                'type_connection' => 'user'
+            ));
     }
 
     /**

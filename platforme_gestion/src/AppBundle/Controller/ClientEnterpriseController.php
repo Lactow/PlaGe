@@ -17,9 +17,11 @@ class ClientEnterpriseController extends Controller {
                     'view_extension' => 'dash',
                     'enterprise_name'=>'PlaGe Corporation',
                     'project_name' => 'PlaGe',
+                    'type_connection' => 'client',
                     'project_dead_line' => '14/02/2110',
                     'project_progress' => '10%',
                     'project_progress_bar' => '][-|*|------------------]>',
+
                     'items' => array(
                         'wiki' => array(
                             'name' => 'Wiki Enterprise',
@@ -45,8 +47,8 @@ class ClientEnterpriseController extends Controller {
 	 *@Route("/enterprise/client/project", name="Client project")
 	 */
 	function ProjectDashboard(){
-		return $this->render('enterprise/dashboard.html.twig', array(
-                    'enterprise_name' => 'PlaGE Corporation'
+		return $this->render('project/project_dash.html.twig', array(
+                    'type_connection' => 'client'
         ));
 	}
 	/**
