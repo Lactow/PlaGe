@@ -19,7 +19,7 @@ class AuthenticationController extends Controller
 {
     /**
      * will create ONE ENTERPRISE
-     * @Route("/auth/create", name="submit")
+     * @Route("/entreprise/auth/create", name="submit")
      */
     public function submitEnterprise(){
         //button -> save enterprise with admin
@@ -77,5 +77,4 @@ class AuthenticationController extends Controller
         //disconnect user/admin/client
         //redirect on /
     }
-    
 }

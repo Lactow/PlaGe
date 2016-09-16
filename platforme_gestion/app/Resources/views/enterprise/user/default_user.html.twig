@@ -1,2 +1,14 @@
 {# base template for user views #}
-user view general
+{% extends 'enterprise/enterprise_index.html.twig' %}
+
+{% block contentt %}
+	{% if view_extension is defined %}
+		{% if view_extension == 'dash' %}
+			{% include 'enterprise/dashboard.html.twig' %}
+			
+		{% endif %}
+		
+	{% endif %}
+		
+
+{% endblock %}
