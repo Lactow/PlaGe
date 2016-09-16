@@ -14,15 +14,35 @@ class ClientEnterpriseController extends Controller {
      */
 	function ClientView(){
 		return $this->render('enterprise/client/default_client.html.twig', array(
-                    'enterprise_name' => 'PlaGE Corporation',
-                    'view_extension' => 'dash'
+                    'view_extension' => 'dash',
+                    'enterprise_name'=>'PlaGe Corporation',
+                    'project_name' => 'PlaGe',
+                    'project_dead_line' => '14/02/2110',
+                    'project_progress' => '10%',
+                    'project_progress_bar' => '][-|*|------------------]>',
+                    'items' => array(
+                        'wiki' => array(
+                            'name' => 'Wiki Enterprise',
+                            'link' => 'http://www.wikipedia.org/wiki'
+                        ),
+                        'official_doc' => array(
+                            'name' => 'Enterprise Official Document',
+                            'link' => 'http://www.github.com'
+                        )
+                    ),
+                    'admins' => array(
+                        'Blah' => array(
+                            'name' => 'Blah Bleh',
+                            'mail' => 'admin-blah@pla_ge.com'
+                        )
+                    )
         ));
         
 	}
 
 	/**
 	 *
-	 *@Route("/enterprise/client/projet", name="Client projet")
+	 *@Route("/enterprise/client/project", name="Client project")
 	 */
 	function ProjectDashboard(){
 		return $this->render('enterprise/dashboard.html.twig', array(
@@ -31,7 +51,7 @@ class ClientEnterpriseController extends Controller {
 	}
 	/**
 	 *
-	 *@Route("/enterprise/client/projet/doc", name="doc view client")
+	 *@Route("/enterprise/client/project/doc", name="doc view client")
 	 */
 	function docView(){
 		return $this->render('enterprise/doc/doc_view.html.twig', array(
@@ -40,7 +60,7 @@ class ClientEnterpriseController extends Controller {
 	}
 	/**
 	 *
-	 *@Route("/enterprise/client/projet/bug/add", name="bug form")
+	 *@Route("/enterprise/client/project/bug/add", name="bug form")
 	 */
 	function bugReport(){
 		return $this->render('enterprise/bug/bug_form.html.twig', array(
@@ -49,7 +69,7 @@ class ClientEnterpriseController extends Controller {
 	}
 	/**
 	 *
-	 *@Route("/enterprise/client/projet/contact", name="contact client")
+	 *@Route("/enterprise/client/project/contact", name="contact client")
 	 */
 	function contactView(){
 		return $this->render('general/contact.html.twig', array(
@@ -58,7 +78,7 @@ class ClientEnterpriseController extends Controller {
 	}
 	/**
 	 *
-	 *@Route("/enterprise/client/projet/buglist", name="bug")
+	 *@Route("/enterprise/client/project/buglist", name="bug")
 	 */
 	function bugListView(){
 		return $this->render('enterprise/bug/bug_view.html.twig', array(
