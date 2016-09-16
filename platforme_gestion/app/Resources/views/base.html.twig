@@ -11,11 +11,15 @@
 </head>
 <body>
     {% block header %}
-        {% include 'default/header.html.twig' %}
+        {% include 'header.html.twig' %}
     {% endblock %}
-{% block content %}{% endblock %}
+{% block content %}
+<!-- override by index.html-->
+{% endblock %}
+
+
 {% block footer %}
-        {% include 'default/footer.html.twig' %}
+        {% include 'footer.html.twig' %}
 {% endblock %}
 {% block javascripts %}
    

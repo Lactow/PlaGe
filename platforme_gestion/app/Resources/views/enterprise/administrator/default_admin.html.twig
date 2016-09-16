@@ -1,2 +1,15 @@
 {# base template for admin views #}
-default admin
+{% extends 'enterprise/enterprise_index.html.twig' %}
+
+
+{% block content %}
+    <p>Dashboard Admin </p>
+    {{project_name}}
+
+    {% block contentt %}
+        {% include 'enterprise/dashboard.html.twig' %}
+    {% endblock %}
+
+
+
+{% endblock %}

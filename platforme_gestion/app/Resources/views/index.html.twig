@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div id="wrapper">
+        <div id="container">
+            <div id="welcome">
+                <h1><span>Welcome to</span> PlaGe Corporation Product</h1>
+            </div>
+
+            <div id="status">
+                <p>
+
+                    Orientis vero limes in longum protentus et rectum ab Euphratis fluminis ripis ad usque supercilia porrigitur Nili, laeva Saracenis conterminans gentibus, dextra pelagi fragoribus patens, quam plagam Nicator Seleucus occupatam auxit magnum in modum, cum post Alexandri Macedonis obitum successorio iure teneret regna Persidis, efficaciae inpetrabilis rex, ut indicat cognomentum.
+
+                    Oportunum est, ut arbitror, explanare nunc causam</p><p> Quae ad exitium praecipitem Aginatium inpulit iam inde a priscis maioribus nobilem, ut locuta est pertinacior fama. nec enim super hoc ulla documentorum rata est fides.
+
+                    Iamque non umbratis fallaciis res agebatur, sed qua palatium est extra muros, armatis omne circumdedit. ingressusque obscuro iam die, ablatis regiis indumentis Caesarem tunica texit et paludamento communi, eum post haec nihil passurum velut mandato principis iurandi crebritate confirmans et statim inquit exsurge et inopinum carpento privato inpositum ad Histriam duxit prope oppidum Polam, ubi quondam peremptum Constantini filium accepimus Crispum.
+                </p>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                        <div><a href="#">Accès Entreprise</a></div>
+                        <div><a href="#">Cr&eacute;ation Entreprise</a></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    {% endblock %}
+
+    {% block stylesheets %}
+        <style>
+            body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
+            h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
+            h1 { font-size: 36px; }
+            h2 { font-size: 21px; margin-bottom: 1em; }
+            p { margin: 0 0 1em 0; }
+            a { color: #0000F0; }
+            a:hover { text-decoration: none; }
+            code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }
+            #wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }
+            #container { padding: 2em; }
+            #welcome, #status { margin-bottom: 2em; }
+            #welcome h1 span { display: block; font-size: 75%; }
+            #icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }
+            #icon-book { display: none; }
+
+            @media (min-width: 768px) {
+                #wrapper { width: 80%; margin: 2em auto; }
+                #icon-book { display: inline-block; }
+                #status a, #next a { display: block; }
+
+                @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
+                @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
+                .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
+            }
+        </style>
+    {% endblock %}

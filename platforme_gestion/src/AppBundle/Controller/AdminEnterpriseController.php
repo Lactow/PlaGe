@@ -36,18 +36,38 @@ class AdminEnterpriseController extends Controller {
     public function AdminView() {
 
         return $this->render('enterprise/administrator/default_admin.html.twig', array(
-                    'enterprise_name' => 'PlaGE Corporation'
+                    'enterprise_name' => 'PlaGe Corporation',
+                    'project_name' => 'PlaGe',
+                    'project_dead_line' => '14/02/2110',
+                    'project_progress' => '10%',
+                    'project_progress_bar' => '][-|*|------------------]>',
+                    'items' => array(
+                        'wiki' => array(
+                            'name' => 'Wiki Enterprise',
+                            'link' => 'http://www.wikipedia.org/wiki'
+                        ),
+                        'official_doc' => array(
+                            'name' => 'Enterprise Official Document',
+                            'link' => 'http://www.github.com'
+                        )
+                    ),
+                    'admins' => array(
+                        'Blah' => array(
+                            'name' => 'Blah Bleh',
+                            'mail' => 'admin-blah@pla_ge.com'
+                        )
+                    )
         ));
     }
 
     /**
      * will take project id
      * 
-     * @Route("/enterprise/admin/project", name="Project View")
+     * @Route("/enterprise/admin/projectdash", name="Project View")
      */
     public function ProjectDashboard() {
         //This return one project selected 
-        return $this->render('enterprise/administrator/project_dash.html.twig', array(
+        return $this->render('dashboard.html.twig', array(
                     'enterprise_name' => 'PlaGe Corporation',
                     'project_name' => 'PlaGe',
                     'project_dead_line' => '14/02/2110',
