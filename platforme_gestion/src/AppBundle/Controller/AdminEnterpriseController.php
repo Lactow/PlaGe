@@ -115,7 +115,7 @@ class AdminEnterpriseController extends Controller {
      * @Route("/enterprise/admin/project/task", name="One task")
      */
     public function viewTask() {
-        return $this->render('enterprise/administrator/project/task.html.twig');
+        return $this->render('enterprise/administrator/task.html.twig');
     }
 
     /**
@@ -123,7 +123,7 @@ class AdminEnterpriseController extends Controller {
      * @Route("/enterprise/admin/project/task/edit", name="Edit task")
      */
     public function editTask() {
-        return $this->render('enterprise/administrator/project/task_form.html.twig');
+        return $this->render('enterprise/administrator/task_form.html.twig');
     }
 
     /**
